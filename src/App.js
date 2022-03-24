@@ -1,11 +1,16 @@
 import React from 'react';
+import Card from './components/Card';
 import Navigation from './components/Navigation';
 
 function App(props) {
     return (
         <div>
-            <h1 className='font-bold text-cyan-500'>Hello world</h1>
-            <Navigation />
+            <div className="flex items-center justify-center md:min-h-screen">
+                <div className="container">
+                    <Card />
+                    <Navigation />
+                </div>
+            </div>
         </div>
     );
 }
