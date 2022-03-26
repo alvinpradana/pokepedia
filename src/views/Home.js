@@ -12,22 +12,34 @@ function Home() {
                     <Card content={{
                         imageUrl:"http://placekitten.com/g/400/300",
                         title:"First card",
-                        description:"First card description."
+                        description:"First card description.",
+                        detailUrl:"/detail",
+                        linkUrl:"#!",
+                        linkTitle:"Add to favorite"
                         }} />
                     <Card content={{
                         imageUrl:"http://placekitten.com/400/300",
                         title:"Second card",
-                        description:"Second card description."
+                        description:"Second card description.",
+                        detailUrl:"/detail",
+                        linkUrl:"#!",
+                        linkTitle:"Add to favorite"
                         }} />
                     <Card content={{
                         imageUrl:"http://placekitten.com/g/400/300",
                         title:"Third card",
-                        description:"Third card description."
+                        description:"Third card description.",
+                        detailUrl:"/detail",
+                        linkUrl:"#!",
+                        linkTitle:"Add to favorite"
                         }} />
                     <Card content={{
                         imageUrl:"http://placekitten.com/400/300",
                         title:"Forth card",
-                        description:"Forth card description."
+                        description:"Forth card description.",
+                        detailUrl:"/detail",
+                        linkUrl:"#!",
+                        linkTitle:"Add to favorite"
                         }} />
                 </div>
             </div>
