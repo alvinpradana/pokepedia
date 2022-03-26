@@ -1,15 +1,15 @@
 import React from 'react';
-import Card from './components/Card';
+import Hero from './components/Hero';
 import Navigation from './components/Navigation';
+import Router from './router';
 
-function App(props) {
+function App() {
     return (
         <div>
-            <div className="flex items-center justify-center md:min-h-screen">
-                <div className="container">
-                    <Card />
-                    <Navigation />
-                </div>
+            <div className="container">
+                <Hero />
+                <Router />
+                <Navigation />
             </div>
         </div>
     );
