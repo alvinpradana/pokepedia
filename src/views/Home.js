@@ -1,50 +1,44 @@
-import React from 'react';
-import Button from '../components/Button';
-import Card from '../components/Card';
-import PageTitle from '../components/PageTitle';
+import React from "react";
+import Button from "../components/Button";
+import Card from "../components/Card";
+import PageTitle from "../components/PageTitle";
+import { usePokemons } from "../hooks/usePokemons";
 
 function Home() {
+    const { error, loading, data } = usePokemons();
+
+    if (error) return <PageTitle pageTitle="Something went wrong!"></PageTitle>;
+    if (loading) return <PageTitle pageTitle="Loading..."></PageTitle>;
     return (
         <div>
-            <PageTitle pageTitle="List Pokemon"></PageTitle>
+            <div className="grid grid-cols-2 justify-between">
+                <PageTitle pageTitle="List Pokemon"></PageTitle>
+                <h5 className="text-gray-900 font-semibold text-xl tracking-tight text-right mt-10">
+                    {data.pokemons.count} items
+                </h5>
+            </div>
             <div className="flex items-start">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-5">
-                    <Card content={{
-                        imageUrl:"http://placekitten.com/g/400/300",
-                        title:"First card",
-                        description:"First card description.",
-                        detailUrl:"/detail",
-                        linkUrl:"#!",
-                        linkTitle:"Add to favorite"
-                        }} />
-                    <Card content={{
-                        imageUrl:"http://placekitten.com/400/300",
-                        title:"Second card",
-                        description:"Second card description.",
-                        detailUrl:"/detail",
-                        linkUrl:"#!",
-                        linkTitle:"Add to favorite"
-                        }} />
-                    <Card content={{
-                        imageUrl:"http://placekitten.com/g/400/300",
-                        title:"Third card",
-                        description:"Third card description.",
-                        detailUrl:"/detail",
-                        linkUrl:"#!",
-                        linkTitle:"Add to favorite"
-                        }} />
-                    <Card content={{
-                        imageUrl:"http://placekitten.com/400/300",
-                        title:"Forth card",
-                        description:"Forth card description.",
-                        detailUrl:"/detail",
-                        linkUrl:"#!",
-                        linkTitle:"Add to favorite"
-                        }} />
+                    {data.pokemons.results.map((pokemon, index) => {
+                        return (
+                            <Card
+                                key={index}
+                                content={{
+                                    imageUrl: `${pokemon.image}`,
+                                    title: `${pokemon.name}`,
+                                    // description: `${pokemon.url}`,
+                                    detailUrl: `/detail/${pokemon.name}`,
+                                    linkUrl: "#!",
+                                    linkTitle: "Add to favorite",
+                                }}
+                            />
+                        );
+                    })}
                 </div>
             </div>
-            <div className="flex flex-row justify-center mt-8 mb-32">
-                <Button btnTitle="Show more" />
+            <div className="flex flex-row justify-center gap-6 mt-8 mb-32">
+                <Button btnTitle="< Prev" />
+                <Button btnTitle="Next >" />
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ function Router() {
             <Route exact path='/' element={<Home />} />
             <Route path='/favorite' element={<Favorite />} />
             <Route exact path='/favorite/detail' element={<DetailFavorite />} />
-            <Route path='/detail' element={<Detail />} />
+            <Route path='/detail/:name' element={<Detail />} />
         </Routes>
     );
 }

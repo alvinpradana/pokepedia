@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../components/Button';
 import PageTitle from '../components/PageTitle';
 
-function DetailFavorite(props) {
+function DetailFavorite() {
     return (
         <div>
             <PageTitle pageTitle="Detail Favorite Pokemon" />

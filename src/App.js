@@ -6,7 +6,7 @@ import Router from './router';
 function App() {
     return (
         <div>
-            <div className="container">
+            <div className="xs:px-6 md:container">
                 <Hero />
                 <Router />
                 <Navigation />
